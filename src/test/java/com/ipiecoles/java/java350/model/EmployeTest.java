@@ -59,4 +59,29 @@ public class EmployeTest {
         Assertions.assertThat(nbAnnees).isEqualTo(0);
     }
 
+    @Test
+    void augmentersalaire() {
+        double salaire = 0;
+        //Given
+        Employe employe = new Employe("kenza", "alge", "T222", LocalDate.of(2019, Month.JANUARY, 10), 2000d, 1,1.4);
+        employe.setSalaire(1200d);
+        untaireٍsalaire = employe.getSalaire()  *  (persntageaugmentaion/10);
+
+        //When
+        double persntage = 2.0;
+        employe.augmenterSalaire(2.0);
+        //Then
+        Assertions.assertThat(employe.getSalaire()).isEqualTo(salaire);
+
+
+    }
+    @Test
+    void augmentersalaireNull(){
+        //given
+        Employe employe = new Employe("kenza", "alge", "T222", LocalDate.of(2019, Month.JANUARY, 10), 2000d, 1,1.4);
+        //when
+        employe.augmenterSalaire(0.2);
+        //then
+        Assertions.assertThat(employe.getSalaire()).isNull();
+    }
 }
